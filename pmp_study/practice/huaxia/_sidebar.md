@@ -3,3 +3,7 @@
     * [2021-07-29-每日一练](/pmp_study/practice/huaxia/2021-07-29-每日一练.md)
     * [2021-07-30-每日一练](/pmp_study/practice/huaxia/2021-07-30-每日一练.md)
     * [2021-08-02-每日一练](/pmp_study/practice/huaxia/2021-08-02-每日一练.md)
+    * [2021-08-03-每日一练](/pmp_study/practice/huaxia/2021-08-03-每日一练.md)
+    * [2021-08-04-每日一练](/pmp_study/practice/huaxia/2021-08-04-每日一练.md)
+    * [2021-08-05-每日一练](/pmp_study/practice/huaxia/2021-08-05-每日一练.md)
+    * [2021-08-06-每日一练](/pmp_study/practice/huaxia/2021-08-06-每日一练.md)
