@@ -15,3 +15,6 @@
     * [第5章项目范围管理答案-03](/pmp_study/practice/lagou/answer/第5章项目范围管理答案-03 "第5章项目范围管理答案-03")
     * [第6章项目进度管理答案](/pmp_study/practice/lagou/answer/第6章项目进度管理答案 "第6章项目进度管理答案")
     * [第7章项目成本管理答案](/pmp_study/practice/lagou/answer/第7章项目成本管理答案 "第7章项目成本管理答案")
+    * [PMP模拟题（一）答案](/pmp_study/practice/lagou/answer/PMP模拟题（一）答案.md)
+    * [PMP模拟题（二）答案](/pmp_study/practice/lagou/answer/PMP模拟题（二）答案.md)
+    * [PMP模拟题（三）答案](/pmp_study/practice/lagou/answer/PMP模拟题（三）答案.md)
