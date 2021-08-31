@@ -7,3 +7,6 @@
     * [2021-08-10-监督风险输出](/pmp_study/afternoon_tea/huaxia/2021-08-10-监督风险输出.md)
     * [2021-08-11-风险报告](/pmp_study/afternoon_tea/huaxia/2021-08-11-风险报告.md)
     * [2021-08-12-非事件类风险](/pmp_study/afternoon_tea/huaxia/2021-08-12-非事件类风险.md)
+    * [2021-08-13-风险清单](/pmp_study/afternoon_tea/huaxia/2021-08-13-风险清单.md)
+    * [2021-08-16-项目采购管理](/pmp_study/afternoon_tea/huaxia/2021-08-16-项目采购管理.md)
+    * [2021-08-17-项目采购管理](/pmp_study/afternoon_tea/huaxia/2021-08-17-项目采购管理.md)
