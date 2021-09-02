@@ -14,3 +14,5 @@
     * [2021-08-13-每日一练](/pmp_study/practice/huaxia/2021-08-13-每日一练.md)
     * [2021-08-16-每日一练](/pmp_study/practice/huaxia/2021-08-16-每日一练.md)
     * [2021-08-17-每日一练](/pmp_study/practice/huaxia/2021-08-17-每日一练.md)
+    * [2021-08-18-每日一练](/pmp_study/practice/huaxia/2021-08-18-每日一练.md)
+    * [2021-08-19-每日一练](/pmp_study/practice/huaxia/2021-08-19-每日一练.md)
