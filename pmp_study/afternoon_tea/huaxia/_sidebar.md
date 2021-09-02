@@ -12,3 +12,5 @@
     * [2021-08-17-项目采购管理](/pmp_study/afternoon_tea/huaxia/2021-08-17-项目采购管理.md)
     * [2021-08-18-项目采购管理考虑因素](/pmp_study/afternoon_tea/huaxia/2021-08-18-项目采购管理考虑因素.md)
     * [2021-08-19-规划采购管理输出](/pmp_study/afternoon_tea/huaxia/2021-08-19-规划采购管理输出.md)
+    * [2021-08-20-规划采购管理输出](/pmp_study/afternoon_tea/huaxia/2021-08-20-规划采购管理输出.md)
+    * [2021-08-23-采购工作说明书](/pmp_study/afternoon_tea/huaxia/2021-08-23-采购工作说明书.md)
