@@ -16,4 +16,5 @@
     * [2021-08-23-采购工作说明书](/pmp_study/afternoon_tea/huaxia/2021-08-23-采购工作说明书.md)
     * [2021-08-24-规划采购管理输出](/pmp_study/afternoon_tea/huaxia/2021-08-24-规划采购管理输出.md)
     * [2021-08-25-采购文件](/pmp_study/afternoon_tea/huaxia/2021-08-25-采购文件.md)
+    * [2021-08-26-采购分析](/pmp_study/afternoon_tea/huaxia/2021-08-26-采购分析.md)
     * [2021-09-03-变化中的合同签署实践](/pmp_study/afternoon_tea/huaxia/2021-09-03-变化中的合同签署实践.md)
