@@ -27,3 +27,4 @@
     * [2021-09-01-每日一练](/pmp_study/practice/huaxia/2021-09-01-每日一练.md)
     * [2021-09-02-每日一练](/pmp_study/practice/huaxia/2021-09-02-每日一练.md)
     * [2021-09-03-每日一练](/pmp_study/practice/huaxia/2021-09-03-每日一练.md)
+    * [2021-09-06-每日一练](/pmp_study/practice/huaxia/2021-09-06-每日一练.md)
