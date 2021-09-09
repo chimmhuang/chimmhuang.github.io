@@ -27,3 +27,4 @@
     * [2021-09-06-项目相关方管理](/pmp_study/afternoon_tea/huaxia/2021-09-06-项目相关方管理.md)
     * [2021-09-07-项目相关方管理](/pmp_study/afternoon_tea/huaxia/2021-09-07-项目相关方管理.md)
     * [2021-09-08-相关方参与](/pmp_study/afternoon_tea/huaxia/2021-09-08-相关方参与.md)
+    * [2021-09-09-项目相关方管理考虑因素](/pmp_study/afternoon_tea/huaxia/2021-09-09-项目相关方管理考虑因素.md)
