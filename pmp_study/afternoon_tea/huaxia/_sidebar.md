@@ -30,3 +30,6 @@
     * [2021-09-09-项目相关方管理考虑因素](/pmp_study/afternoon_tea/huaxia/2021-09-09-项目相关方管理考虑因素.md)
     * [2021-09-10-识别相关方输出-相关方登记册](/pmp_study/afternoon_tea/huaxia/2021-09-10-识别相关方输出-相关方登记册.md)
     * [2021-09-13-识别相关方输出-变更请求](/pmp_study/afternoon_tea/huaxia/2021-09-13-识别相关方输出-变更请求.md)
+    * [2021-09-14-监督相关方参与输出](/pmp_study/afternoon_tea/huaxia/2021-09-14-监督相关方参与输出.md)
+    * [2021-09-15-管理相关方参与](/pmp_study/afternoon_tea/huaxia/2021-09-15-管理相关方参与.md)
+    * [2021-09-17-相关方类型](/pmp_study/afternoon_tea/huaxia/2021-09-17-相关方类型.md)
