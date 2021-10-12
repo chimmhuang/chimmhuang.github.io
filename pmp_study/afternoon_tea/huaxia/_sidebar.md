@@ -45,3 +45,4 @@
     * [2021-10-08-项目阶段](/pmp_study/afternoon_tea/huaxia/2021-10-08-项目阶段.md)
     * [2021-10-09-项目管理过程组](/pmp_study/afternoon_tea/huaxia/2021-10-09-项目管理过程组.md)
     * [2021-10-11-项目管理](/pmp_study/afternoon_tea/huaxia/2021-10-11-项目管理.md)
+    * [2021-10-12-项目管理](/pmp_study/afternoon_tea/huaxia/2021-10-12-项目管理.md)

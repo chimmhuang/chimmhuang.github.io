@@ -49,3 +49,4 @@
     * [2021-10-08-每日一练](/pmp_study/practice/huaxia/2021-10-08-每日一练.md)
     * [2021-10-09-每日一练](/pmp_study/practice/huaxia/2021-10-09-每日一练.md)
     * [2021-10-11-每日一练](/pmp_study/practice/huaxia/2021-10-11-每日一练.md)
+    * [2021-10-12-每日一练](/pmp_study/practice/huaxia/2021-10-12-每日一练.md)
