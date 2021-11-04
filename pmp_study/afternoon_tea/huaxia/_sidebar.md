@@ -47,3 +47,7 @@
     * [2021-10-11-项目管理](/pmp_study/afternoon_tea/huaxia/2021-10-11-项目管理.md)
     * [2021-10-12-项目管理](/pmp_study/afternoon_tea/huaxia/2021-10-12-项目管理.md)
     * [2021-10-13-项目运营环境](/pmp_study/afternoon_tea/huaxia/2021-10-13-项目运营环境.md)
+    * [2021-10-14-项目管理数据和信息](/pmp_study/afternoon_tea/huaxia/2021-10-14-项目管理数据和信息.md)
+    * [2021-10-15-引论](/pmp_study/afternoon_tea/huaxia/2021-10-15-引论.md)
+    * [2021-10-18-每日一学](/pmp_study/afternoon_tea/huaxia/2021-10-18-每日一学.md)
+    * [2021-10-19-敏捷价值观](/pmp_study/afternoon_tea/huaxia/2021-10-19-敏捷价值观.md)
