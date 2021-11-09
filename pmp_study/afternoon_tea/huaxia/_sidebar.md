@@ -58,3 +58,4 @@
     * [2021-10-26-项目管理办公室](/pmp_study/afternoon_tea/huaxia/2021-10-26-项目管理办公室.md)
     * [2021-10-27-PMO提供支持](/pmp_study/afternoon_tea/huaxia/2021-10-27-PMO提供支持.md)
     * [2021-10-28-项目经理的角色](/pmp_study/afternoon_tea/huaxia/2021-10-28-项目经理的角色.md)
+    * [2021-10-29-项目经理的定义](/pmp_study/afternoon_tea/huaxia/2021-10-29-项目经理的定义.md)
