@@ -67,3 +67,7 @@
     * [2021-11-08-领导力风格](/pmp_study/afternoon_tea/huaxia/2021-11-08-领导力风格.md)
     * [2021-11-09-执行整合](/pmp_study/afternoon_tea/huaxia/2021-11-09-执行整合.md)
     * [2021-11-10-执行整合](/pmp_study/afternoon_tea/huaxia/2021-11-10-执行整合.md)
+    * [2021-11-11-整合与复杂性](/pmp_study/afternoon_tea/huaxia/2021-11-11-整合与复杂性.md)
+    * [2021-11-12-项目整合管理概念](/pmp_study/afternoon_tea/huaxia/2021-11-12-项目整合管理概念.md)
+    * [2021-11-15-项目管理](/pmp_study/afternoon_tea/huaxia/2021-11-15-项目管理.md)
+    * [2021-11-16-项目管理](/pmp_study/afternoon_tea/huaxia/2021-11-16-项目管理.md)
