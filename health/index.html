@@ -276,7 +276,8 @@
     });
     
     function updateChart(days) {
-      fetch('data/health_data.json')
+      const cacheBuster = '?' + Date.now();
+      fetch('data/health_data.json' + cacheBuster)
         .then(response => response.json())
         .then(data => {
           let displayData = data.history;

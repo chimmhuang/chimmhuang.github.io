@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-  fetch('data/health_data.json')
+  const cacheBuster = '?' + Date.now();
+  fetch('data/health_data.json' + cacheBuster)
     .then(response => response.json())
     .then(data => {
       renderProfile(data.profile);
@@ -222,7 +223,8 @@ function renderChart(history, days) {
 }
 
 function changeTimeRange(days) {
-  fetch('data/health_data.json')
+  const cacheBuster = '?' + Date.now();
+  fetch('data/health_data.json' + cacheBuster)
     .then(response => response.json())
     .then(data => {
       const ctx = document.getElementById('trendChart').getContext('2d');
