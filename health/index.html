@@ -158,9 +158,9 @@
       <div class="chart-header">
         <h3>体重与体脂变化趋势</h3>
         <div class="time-range">
-          <button class="range-btn active" onclick="updateChart(7)">近7天</button>
-          <button class="range-btn" onclick="updateChart(30)">近30天</button>
-          <button class="range-btn" onclick="updateChart(90)">近90天</button>
+          <button class="range-btn active" data-days="7">近7天</button>
+          <button class="range-btn" data-days="30">近30天</button>
+          <button class="range-btn" data-days="90">近90天</button>
         </div>
       </div>
       <div class="chart-container">
@@ -175,7 +175,16 @@
           <h4 style="color: #ff9800; margin-bottom: 16px; text-align: center;">节段脂肪分布</h4>
           <div class="segment-body">
             <div class="body-icon">
-              <img src="https://api.iconify.design/healthicons/body-fat.svg?color=%23ff9800&width=120&height=180" alt="脂肪分布">
+              <svg viewBox="0 0 80 120" fill="#ff9800">
+                <ellipse cx="40" cy="35" rx="12" ry="14" opacity="0.8"/>
+                <rect x="30" y="45" width="20" height="35" rx="8" opacity="0.8"/>
+                <line x1="40" y1="80" x2="40" y2="110" stroke="#ff9800" stroke-width="6"/>
+                <line x1="40" y1="60" x2="15" y2="55" stroke="#ff9800" stroke-width="5"/>
+                <line x1="40" y1="60" x2="65" y2="55" stroke="#ff9800" stroke-width="5"/>
+                <line x1="40" y1="95" x2="15" y2="100" stroke="#ff9800" stroke-width="5"/>
+                <line x1="40" y1="95" x2="65" y2="100" stroke="#ff9800" stroke-width="5"/>
+                <circle cx="40" cy="35" r="6" fill="#fff" opacity="0.3"/>
+              </svg>
             </div>
             <div class="segment-list">
               <div class="segment-item">
@@ -206,7 +215,19 @@
           <h4 style="color: #4caf50; margin-bottom: 16px; text-align: center;">节段肌肉分布</h4>
           <div class="segment-body">
             <div class="body-icon">
-              <img src="https://api.iconify.design/healthicons/muscle.svg?color=%234caf50&width=120&height=180" alt="肌肉分布">
+              <svg viewBox="0 0 80 120" fill="#4caf50">
+                <ellipse cx="40" cy="35" rx="10" ry="12" opacity="0.9"/>
+                <rect x="32" y="45" width="16" height="35" rx="6" opacity="0.9"/>
+                <line x1="40" y1="80" x2="40" y2="110" stroke="#4caf50" stroke-width="8"/>
+                <line x1="40" y1="60" x2="15" y2="50" stroke="#4caf50" stroke-width="7"/>
+                <line x1="40" y1="60" x2="65" y2="50" stroke="#4caf50" stroke-width="7"/>
+                <line x1="40" y1="95" x2="15" y2="95" stroke="#4caf50" stroke-width="7"/>
+                <line x1="40" y1="95" x2="65" y2="95" stroke="#4caf50" stroke-width="7"/>
+                <circle cx="40" cy="35" r="5" fill="#fff" opacity="0.3"/>
+                <line x1="33" y1="55" x2="47" y2="55" stroke="#81c784" stroke-width="2"/>
+                <line x1="33" y1="65" x2="47" y2="65" stroke="#81c784" stroke-width="2"/>
+                <line x1="33" y1="75" x2="47" y2="75" stroke="#81c784" stroke-width="2"/>
+              </svg>
             </div>
             <div class="segment-list">
               <div class="segment-item">
@@ -245,10 +266,16 @@
   <script>
     let currentChart = null;
     
+    document.querySelectorAll('.range-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.range-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const days = parseInt(this.dataset.days);
+        updateChart(days);
+      });
+    });
+    
     function updateChart(days) {
-      document.querySelectorAll('.range-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-      
       fetch('data/health_data.json')
         .then(response => response.json())
         .then(data => {
