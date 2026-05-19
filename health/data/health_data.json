@@ -101,46 +101,39 @@
   },
   "history": [
     {
-      "date": "2026-05-19",
-      "weight": 82.9,
-      "bodyFatRate": 23.7,
-      "bmi": 25.9
-    },
-    {
-      "date": "2026-05-18",
-      "weight": 83.2,
-      "bodyFatRate": 23.8,
-      "bmi": 26.0
-    },
-    {
-      "date": "2026-05-17",
-      "weight": 83.5,
-      "bodyFatRate": 24.0,
-      "bmi": 26.1
-    },
-    {
-      "date": "2026-05-16",
-      "weight": 83.8,
-      "bodyFatRate": 24.1,
-      "bmi": 26.2
-    },
-    {
-      "date": "2026-05-15",
-      "weight": 84.0,
-      "bodyFatRate": 24.2,
-      "bmi": 26.3
+      "date": "2026-05-13",
+      "weight": 84.5,
+      "bodyFatRate": 24.5
     },
     {
       "date": "2026-05-14",
       "weight": 84.2,
-      "bodyFatRate": 24.3,
-      "bmi": 26.4
+      "bodyFatRate": 24.3
     },
     {
-      "date": "2026-05-13",
-      "weight": 84.5,
-      "bodyFatRate": 24.5,
-      "bmi": 26.5
+      "date": "2026-05-15",
+      "weight": 84.0,
+      "bodyFatRate": 24.2
+    },
+    {
+      "date": "2026-05-16",
+      "weight": 83.8,
+      "bodyFatRate": 24.1
+    },
+    {
+      "date": "2026-05-17",
+      "weight": 83.5,
+      "bodyFatRate": 24.0
+    },
+    {
+      "date": "2026-05-18",
+      "weight": 83.2,
+      "bodyFatRate": 23.8
+    },
+    {
+      "date": "2026-05-19",
+      "weight": 82.9,
+      "bodyFatRate": 23.7
     }
   ]
 }

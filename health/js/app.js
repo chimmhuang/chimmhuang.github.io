@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
       renderBodyComposition(data.bodyComposition);
       renderAssessment(data.assessment);
       renderSegmentalData(data.segmentalFat, data.segmentalMuscle);
-      renderChart(data.history);
+      renderChart(data.history, 7);
     })
     .catch(error => {
       console.error('Error loading health data:', error);
@@ -75,7 +75,8 @@ function getProgressWidth(level, ranges) {
 
 function renderBodyMetrics(metrics) {
   const weight = metrics.weight;
-  document.getElementById('metric-weight').innerHTML = `${weight.value}kg <span class="level-badge ${getLevelClass(weight.level)}">${weight.level}</span>`;
+  const weightJin = (weight.value * 2).toFixed(1);
+  document.getElementById('metric-weight').innerHTML = `${weightJin}斤 <span class="level-badge ${getLevelClass(weight.level)}">${weight.level}</span>`;
   document.getElementById('progress-weight').className = `progress-fill ${getProgressColor(weight.level)}`;
   document.getElementById('progress-weight').style.width = `${getProgressWidth(weight.level, weight.range)}%`;
 
@@ -146,12 +147,13 @@ function renderSegmentalData(fat, muscle) {
   document.getElementById('muscle-right-leg').textContent = muscle.rightLeg + 'kg';
 }
 
-function renderChart(history) {
+function renderChart(history, days) {
+  const displayData = history.slice(-days);
+  
   const ctx = document.getElementById('trendChart').getContext('2d');
-  const dates = history.map(item => item.date.slice(5));
-  const weights = history.map(item => item.weight);
-  const fatRates = history.map(item => item.bodyFatRate);
-  const bmis = history.map(item => item.bmi);
+  const dates = displayData.map(item => item.date.slice(5));
+  const weights = displayData.map(item => (item.weight * 2).toFixed(1));
+  const fatRates = displayData.map(item => item.bodyFatRate);
 
   new Chart(ctx, {
     type: 'line',
@@ -159,7 +161,7 @@ function renderChart(history) {
       labels: dates,
       datasets: [
         {
-          label: '体重 (kg)',
+          label: '体重 (斤)',
           data: weights,
           borderColor: '#667eea',
           backgroundColor: 'rgba(102, 126, 234, 0.1)',
@@ -175,15 +177,6 @@ function renderChart(history) {
           tension: 0.4,
           fill: true,
           yAxisID: 'y1'
-        },
-        {
-          label: 'BMI',
-          data: bmis,
-          borderColor: '#4caf50',
-          backgroundColor: 'rgba(76, 175, 80, 0.1)',
-          tension: 0.4,
-          fill: true,
-          yAxisID: 'y2'
         }
       ]
     },
@@ -206,10 +199,8 @@ function renderChart(history) {
           position: 'left',
           title: {
             display: true,
-            text: '体重 (kg)'
-          },
-          min: 80,
-          max: 86
+            text: '体重 (斤)'
+          }
         },
         y1: {
           type: 'linear',
@@ -219,19 +210,28 @@ function renderChart(history) {
             display: true,
             text: '体脂率 (%)'
           },
-          min: 22,
-          max: 26,
+          min: 20,
+          max: 28,
           grid: {
             drawOnChartArea: false
           }
-        },
-        y2: {
-          type: 'linear',
-          display: false,
-          min: 24,
-          max: 28
         }
       }
     }
   });
+}
+
+function changeTimeRange(days) {
+  fetch('data/health_data.json')
+    .then(response => response.json())
+    .then(data => {
+      const ctx = document.getElementById('trendChart').getContext('2d');
+      if (window.chartInstance) {
+        window.chartInstance.destroy();
+      }
+      window.chartInstance = renderChart(data.history, days);
+    })
+    .catch(error => {
+      console.error('Error loading health data:', error);
+    });
 }

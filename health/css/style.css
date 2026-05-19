@@ -218,10 +218,44 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .chart-card h3 {
   font-size: 18px;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 0;
+}
+
+.time-range {
+  display: flex;
+  gap: 8px;
+}
+
+.range-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.range-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.range-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: transparent;
+  color: white;
 }
 
 .chart-container {

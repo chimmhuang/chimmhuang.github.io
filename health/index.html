@@ -155,7 +155,14 @@
     </div>
     
     <div class="chart-card">
-      <h3>体重与体脂变化趋势</h3>
+      <div class="chart-header">
+        <h3>体重与体脂变化趋势</h3>
+        <div class="time-range">
+          <button class="range-btn active" onclick="updateChart(7)">近7天</button>
+          <button class="range-btn" onclick="updateChart(30)">近30天</button>
+          <button class="range-btn" onclick="updateChart(90)">近90天</button>
+        </div>
+      </div>
       <div class="chart-container">
         <canvas id="trendChart"></canvas>
       </div>
@@ -165,19 +172,10 @@
       <h3>节段分析</h3>
       <div class="segment-grid">
         <div>
-          <h4 style="color: #ff9800; margin-bottom: 16px; text-align: center;">节段脂肪分析</h4>
+          <h4 style="color: #ff9800; margin-bottom: 16px; text-align: center;">节段脂肪分布</h4>
           <div class="segment-body">
             <div class="body-icon">
-              <svg viewBox="0 0 80 120">
-                <circle cx="40" cy="20" r="8" fill="#ff9800"/>
-                <line x1="40" y1="28" x2="40" y2="45" stroke="#ff9800" stroke-width="3"/>
-                <line x1="40" y1="35" x2="20" y2="30" stroke="#ff9800" stroke-width="3"/>
-                <line x1="40" y1="35" x2="60" y2="30" stroke="#ff9800" stroke-width="3"/>
-                <ellipse cx="40" cy="60" rx="18" ry="20" fill="#ff9800" opacity="0.8"/>
-                <line x1="40" y1="80" x2="40" y2="100" stroke="#ff9800" stroke-width="3"/>
-                <line x1="40" y1="90" x2="20" y2="95" stroke="#ff9800" stroke-width="3"/>
-                <line x1="40" y1="90" x2="60" y2="95" stroke="#ff9800" stroke-width="3"/>
-              </svg>
+              <img src="https://api.iconify.design/healthicons/body-fat.svg?color=%23ff9800&width=120&height=180" alt="脂肪分布">
             </div>
             <div class="segment-list">
               <div class="segment-item">
@@ -205,22 +203,10 @@
         </div>
         
         <div>
-          <h4 style="color: #4caf50; margin-bottom: 16px; text-align: center;">节段肌肉分析</h4>
+          <h4 style="color: #4caf50; margin-bottom: 16px; text-align: center;">节段肌肉分布</h4>
           <div class="segment-body">
             <div class="body-icon">
-              <svg viewBox="0 0 80 120">
-                <circle cx="40" cy="20" r="8" fill="#4caf50"/>
-                <line x1="40" y1="28" x2="40" y2="45" stroke="#4caf50" stroke-width="4"/>
-                <line x1="40" y1="35" x2="20" y2="30" stroke="#4caf50" stroke-width="4"/>
-                <line x1="40" y1="35" x2="60" y2="30" stroke="#4caf50" stroke-width="4"/>
-                <ellipse cx="40" cy="60" rx="20" ry="22" fill="#4caf50" opacity="0.8"/>
-                <line x1="40" y1="82" x2="40" y2="100" stroke="#4caf50" stroke-width="4"/>
-                <line x1="40" y1="90" x2="20" y2="95" stroke="#4caf50" stroke-width="4"/>
-                <line x1="40" y1="90" x2="60" y2="95" stroke="#4caf50" stroke-width="4"/>
-                <line x1="32" y1="50" x2="48" y2="50" stroke="#81c784" stroke-width="2"/>
-                <line x1="32" y1="60" x2="48" y2="60" stroke="#81c784" stroke-width="2"/>
-                <line x1="32" y1="70" x2="48" y2="70" stroke="#81c784" stroke-width="2"/>
-              </svg>
+              <img src="https://api.iconify.design/healthicons/muscle.svg?color=%234caf50&width=120&height=180" alt="肌肉分布">
             </div>
             <div class="segment-list">
               <div class="segment-item">
@@ -256,5 +242,96 @@
   </div>
 
   <script src="js/app.js"></script>
+  <script>
+    let currentChart = null;
+    
+    function updateChart(days) {
+      document.querySelectorAll('.range-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      fetch('data/health_data.json')
+        .then(response => response.json())
+        .then(data => {
+          let displayData = data.history;
+          if (days < displayData.length) {
+            displayData = displayData.slice(-days);
+          }
+          
+          const ctx = document.getElementById('trendChart').getContext('2d');
+          if (currentChart) {
+            currentChart.destroy();
+          }
+          
+          const dates = displayData.map(item => item.date.slice(5));
+          const weights = displayData.map(item => (item.weight * 2).toFixed(1));
+          const fatRates = displayData.map(item => item.bodyFatRate);
+          
+          currentChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: dates,
+              datasets: [
+                {
+                  label: '体重 (斤)',
+                  data: weights,
+                  borderColor: '#667eea',
+                  backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                  tension: 0.4,
+                  fill: true,
+                  yAxisID: 'y'
+                },
+                {
+                  label: '体脂率 (%)',
+                  data: fatRates,
+                  borderColor: '#ff9800',
+                  backgroundColor: 'rgba(255, 152, 0, 0.1)',
+                  tension: 0.4,
+                  fill: true,
+                  yAxisID: 'y1'
+                }
+              ]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              interaction: {
+                mode: 'index',
+                intersect: false
+              },
+              plugins: {
+                legend: {
+                  position: 'top'
+                }
+              },
+              scales: {
+                y: {
+                  type: 'linear',
+                  display: true,
+                  position: 'left',
+                  title: {
+                    display: true,
+                    text: '体重 (斤)'
+                  }
+                },
+                y1: {
+                  type: 'linear',
+                  display: true,
+                  position: 'right',
+                  title: {
+                    display: true,
+                    text: '体脂率 (%)'
+                  },
+                  min: 20,
+                  max: 28,
+                  grid: {
+                    drawOnChartArea: false
+                  }
+                }
+              }
+            }
+          });
+        });
+    }
+  </script>
 </body>
 </html>
