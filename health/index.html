@@ -171,86 +171,105 @@
     <div class="segment-card">
       <h3>节段分析</h3>
       <div class="segment-grid">
-        <div>
-          <h4 style="color: #ff9800; margin-bottom: 16px; text-align: center;">节段脂肪分布</h4>
-          <div class="segment-body">
-            <div class="body-icon">
-              <svg viewBox="0 0 80 120" fill="#ff9800">
-                <ellipse cx="40" cy="35" rx="12" ry="14" opacity="0.8"/>
-                <rect x="30" y="45" width="20" height="35" rx="8" opacity="0.8"/>
-                <line x1="40" y1="80" x2="40" y2="110" stroke="#ff9800" stroke-width="6"/>
-                <line x1="40" y1="60" x2="15" y2="55" stroke="#ff9800" stroke-width="5"/>
-                <line x1="40" y1="60" x2="65" y2="55" stroke="#ff9800" stroke-width="5"/>
-                <line x1="40" y1="95" x2="15" y2="100" stroke="#ff9800" stroke-width="5"/>
-                <line x1="40" y1="95" x2="65" y2="100" stroke="#ff9800" stroke-width="5"/>
-                <circle cx="40" cy="35" r="6" fill="#fff" opacity="0.3"/>
-              </svg>
+        <div class="segment-section">
+          <h4 style="color: #ffb74d; margin-bottom: 16px; text-align: center;">节段脂肪分析</h4>
+          <div class="legend-row">
+            <span class="legend-dot low"></span><span>偏低</span>
+            <span class="legend-dot normal"></span><span>正常</span>
+            <span class="legend-dot high"></span><span>偏高</span>
+          </div>
+          <div class="body-analysis">
+            <svg viewBox="0 0 180 280" class="body-svg">
+              <defs>
+                <filter id="shadow">
+                  <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+                </filter>
+              </defs>
+              <g filter="url(#shadow)">
+                <circle cx="90" cy="35" r="18" fill="#ffb74d" opacity="0.9"/>
+                <ellipse cx="90" cy="100" rx="25" ry="35" fill="#ffb74d" opacity="0.9"/>
+                <path d="M90 135 L90 230" stroke="#ffb74d" stroke-width="8" stroke-linecap="round"/>
+                <path d="M90 85 L50 70 L45 60" stroke="#ffb74d" stroke-width="6" stroke-linecap="round"/>
+                <path d="M90 85 L130 70 L135 60" stroke="#ffb74d" stroke-width="6" stroke-linecap="round"/>
+                <path d="M90 200 L55 220 L50 260" stroke="#ffb74d" stroke-width="7" stroke-linecap="round"/>
+                <path d="M90 200 L125 220 L130 260" stroke="#ffb74d" stroke-width="7" stroke-linecap="round"/>
+              </g>
+              <ellipse cx="45" cy="65" rx="10" ry="12" fill="#ffb74d" opacity="0.7"/>
+              <ellipse cx="135" cy="65" rx="10" ry="12" fill="#ffb74d" opacity="0.7"/>
+              <ellipse cx="90" cy="105" rx="20" ry="25" fill="#ffb74d" opacity="0.6"/>
+              <ellipse cx="55" cy="240" rx="8" ry="15" fill="#ffb74d" opacity="0.7"/>
+              <ellipse cx="125" cy="240" rx="8" ry="15" fill="#ffb74d" opacity="0.7"/>
+              <line x1="30" y1="65" x2="15" y2="65" stroke="#666" stroke-width="1.5" stroke-dasharray="4"/>
+              <line x1="150" y1="65" x2="165" y2="65" stroke="#666" stroke-width="1.5" stroke-dasharray="4"/>
+              <line x1="90" y1="70" x2="90" y2="50" stroke="#666" stroke-width="1.5" stroke-dasharray="4"/>
+              <line x1="45" y1="255" x2="30" y2="255" stroke="#666" stroke-width="1.5" stroke-dasharray="4"/>
+              <line x1="135" y1="255" x2="150" y2="255" stroke="#666" stroke-width="1.5" stroke-dasharray="4"/>
+            </svg>
+            <div class="body-labels">
+              <div class="label-item left-arm"><span id="fat-left-arm">0</span></div>
+              <div class="label-item right-arm"><span id="fat-right-arm">0</span></div>
+              <div class="label-item trunk"><span id="fat-trunk">0</span></div>
+              <div class="label-item left-leg"><span id="fat-left-leg">0</span></div>
+              <div class="label-item right-leg"><span id="fat-right-leg">0</span></div>
             </div>
-            <div class="segment-list">
-              <div class="segment-item">
-                <span class="segment-label">左上肢</span>
-                <span class="segment-value" id="fat-left-arm">0</span>
-              </div>
-              <div class="segment-item">
-                <span class="segment-label">右上肢</span>
-                <span class="segment-value" id="fat-right-arm">0</span>
-              </div>
-              <div class="segment-item">
-                <span class="segment-label">躯干</span>
-                <span class="segment-value" id="fat-trunk">0</span>
-              </div>
-              <div class="segment-item">
-                <span class="segment-label">左下肢</span>
-                <span class="segment-value" id="fat-left-leg">0</span>
-              </div>
-              <div class="segment-item">
-                <span class="segment-label">右下肢</span>
-                <span class="segment-value" id="fat-right-leg">0</span>
-              </div>
-            </div>
+          </div>
+          <div class="balance-row">
+            <div class="balance-item"><span>均衡</span><span>上肢均衡</span></div>
+            <div class="balance-item"><span>均衡</span><span>下肢均衡</span></div>
+            <div class="balance-item"><span>均衡</span><span>上下均衡</span></div>
           </div>
         </div>
         
-        <div>
-          <h4 style="color: #4caf50; margin-bottom: 16px; text-align: center;">节段肌肉分布</h4>
-          <div class="segment-body">
-            <div class="body-icon">
-              <svg viewBox="0 0 80 120" fill="#4caf50">
-                <ellipse cx="40" cy="35" rx="10" ry="12" opacity="0.9"/>
-                <rect x="32" y="45" width="16" height="35" rx="6" opacity="0.9"/>
-                <line x1="40" y1="80" x2="40" y2="110" stroke="#4caf50" stroke-width="8"/>
-                <line x1="40" y1="60" x2="15" y2="50" stroke="#4caf50" stroke-width="7"/>
-                <line x1="40" y1="60" x2="65" y2="50" stroke="#4caf50" stroke-width="7"/>
-                <line x1="40" y1="95" x2="15" y2="95" stroke="#4caf50" stroke-width="7"/>
-                <line x1="40" y1="95" x2="65" y2="95" stroke="#4caf50" stroke-width="7"/>
-                <circle cx="40" cy="35" r="5" fill="#fff" opacity="0.3"/>
-                <line x1="33" y1="55" x2="47" y2="55" stroke="#81c784" stroke-width="2"/>
-                <line x1="33" y1="65" x2="47" y2="65" stroke="#81c784" stroke-width="2"/>
-                <line x1="33" y1="75" x2="47" y2="75" stroke="#81c784" stroke-width="2"/>
-              </svg>
+        <div class="segment-section">
+          <h4 style="color: #4caf50; margin-bottom: 16px; text-align: center;">节段肌肉分析</h4>
+          <div class="legend-row">
+            <span class="legend-dot low"></span><span>偏低</span>
+            <span class="legend-dot normal"></span><span>正常</span>
+            <span class="legend-dot high"></span><span>偏高</span>
+          </div>
+          <div class="body-analysis">
+            <svg viewBox="0 0 180 280" class="body-svg">
+              <defs>
+                <filter id="shadow2">
+                  <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+                </filter>
+              </defs>
+              <g filter="url(#shadow2)">
+                <circle cx="90" cy="35" r="16" fill="#4caf50" opacity="0.9"/>
+                <ellipse cx="90" cy="100" rx="22" ry="32" fill="#4caf50" opacity="0.9"/>
+                <path d="M90 132 L90 225" stroke="#4caf50" stroke-width="10" stroke-linecap="round"/>
+                <path d="M90 82 L48 65 L42 52" stroke="#4caf50" stroke-width="8" stroke-linecap="round"/>
+                <path d="M90 82 L132 65 L138 52" stroke="#4caf50" stroke-width="8" stroke-linecap="round"/>
+                <path d="M90 195 L52 215 L48 255" stroke="#4caf50" stroke-width="9" stroke-linecap="round"/>
+                <path d="M90 195 L128 215 L132 255" stroke="#4caf50" stroke-width="9" stroke-linecap="round"/>
+              </g>
+              <line x1="70" y1="85" x2="110" y2="85" stroke="#81c784" stroke-width="2"/>
+              <line x1="70" y1="100" x2="110" y2="100" stroke="#81c784" stroke-width="2"/>
+              <line x1="70" y1="115" x2="110" y2="115" stroke="#81c784" stroke-width="2"/>
+              <line x1="75" y1="128" x2="105" y2="128" stroke="#81c784" stroke-width="1.5"/>
+              <ellipse cx="42" cy="57" rx="12" ry="14" fill="#4caf50" opacity="0.7"/>
+              <ellipse cx="138" cy="57" rx="12" ry="14" fill="#4caf50" opacity="0.7"/>
+              <ellipse cx="90" cy="102" rx="18" ry="22" fill="#4caf50" opacity="0.6"/>
+              <ellipse cx="50" cy="245" rx="10" ry="18" fill="#4caf50" opacity="0.7"/>
+              <ellipse cx="130" cy="245" rx="10" ry="18" fill="#4caf50" opacity="0.7"/>
+              <line x1="30" y1="57" x2="15" y2="57" stroke="#666" stroke-width="1.5" stroke-dasharray="4"/>
+              <line x1="150" y1="57" x2="165" y2="57" stroke="#666" stroke-width="1.5" stroke-dasharray="4"/>
+              <line x1="90" y1="68" x2="90" y2="48" stroke="#666" stroke-width="1.5" stroke-dasharray="4"/>
+              <line x1="45" y1="260" x2="30" y2="260" stroke="#666" stroke-width="1.5" stroke-dasharray="4"/>
+              <line x1="135" y1="260" x2="150" y2="260" stroke="#666" stroke-width="1.5" stroke-dasharray="4"/>
+            </svg>
+            <div class="body-labels">
+              <div class="label-item left-arm"><span id="muscle-left-arm">0</span></div>
+              <div class="label-item right-arm"><span id="muscle-right-arm">0</span></div>
+              <div class="label-item trunk"><span id="muscle-trunk">0</span></div>
+              <div class="label-item left-leg"><span id="muscle-left-leg">0</span></div>
+              <div class="label-item right-leg"><span id="muscle-right-leg">0</span></div>
             </div>
-            <div class="segment-list">
-              <div class="segment-item">
-                <span class="segment-label">左上肢</span>
-                <span class="segment-value" id="muscle-left-arm">0</span>
-              </div>
-              <div class="segment-item">
-                <span class="segment-label">右上肢</span>
-                <span class="segment-value" id="muscle-right-arm">0</span>
-              </div>
-              <div class="segment-item">
-                <span class="segment-label">躯干</span>
-                <span class="segment-value" id="muscle-trunk">0</span>
-              </div>
-              <div class="segment-item">
-                <span class="segment-label">左下肢</span>
-                <span class="segment-value" id="muscle-left-leg">0</span>
-              </div>
-              <div class="segment-item">
-                <span class="segment-label">右下肢</span>
-                <span class="segment-value" id="muscle-right-leg">0</span>
-              </div>
-            </div>
+          </div>
+          <div class="balance-row">
+            <div class="balance-item"><span>均衡</span><span>上肢均衡</span></div>
+            <div class="balance-item"><span>均衡</span><span>下肢均衡</span></div>
+            <div class="balance-item"><span>均衡</span><span>上下均衡</span></div>
           </div>
         </div>
       </div>
