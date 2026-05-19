@@ -135,17 +135,17 @@ function renderAssessment(assessment) {
 }
 
 function renderSegmentalData(fat, muscle) {
-  document.getElementById('fat-left-arm').innerHTML = fat.leftArm + 'kg<br><span style="font-size:11px;color:#999">左上肢</span>';
-  document.getElementById('fat-right-arm').innerHTML = fat.rightArm + 'kg<br><span style="font-size:11px;color:#999">右上肢</span>';
-  document.getElementById('fat-trunk').innerHTML = fat.trunk + 'kg<br><span style="font-size:11px;color:#999">躯干</span>';
-  document.getElementById('fat-left-leg').innerHTML = fat.leftLeg + 'kg<br><span style="font-size:11px;color:#999">左下肢</span>';
-  document.getElementById('fat-right-leg').innerHTML = fat.rightLeg + 'kg<br><span style="font-size:11px;color:#999">右下肢</span>';
+  document.getElementById('fat-left-arm').textContent = fat.leftArm + 'kg';
+  document.getElementById('fat-right-arm').textContent = fat.rightArm + 'kg';
+  document.getElementById('fat-trunk').textContent = fat.trunk + 'kg';
+  document.getElementById('fat-left-leg').textContent = fat.leftLeg + 'kg';
+  document.getElementById('fat-right-leg').textContent = fat.rightLeg + 'kg';
 
-  document.getElementById('muscle-left-arm').innerHTML = muscle.leftArm + 'kg<br><span style="font-size:11px;color:#999">左上肢</span>';
-  document.getElementById('muscle-right-arm').innerHTML = muscle.rightArm + 'kg<br><span style="font-size:11px;color:#999">右上肢</span>';
-  document.getElementById('muscle-trunk').innerHTML = muscle.trunk + 'kg<br><span style="font-size:11px;color:#999">躯干</span>';
-  document.getElementById('muscle-left-leg').innerHTML = muscle.leftLeg + 'kg<br><span style="font-size:11px;color:#999">左下肢</span>';
-  document.getElementById('muscle-right-leg').innerHTML = muscle.rightLeg + 'kg<br><span style="font-size:11px;color:#999">右下肢</span>';
+  document.getElementById('muscle-left-arm').textContent = muscle.leftArm + 'kg';
+  document.getElementById('muscle-right-arm').textContent = muscle.rightArm + 'kg';
+  document.getElementById('muscle-trunk').textContent = muscle.trunk + 'kg';
+  document.getElementById('muscle-left-leg').textContent = muscle.leftLeg + 'kg';
+  document.getElementById('muscle-right-leg').textContent = muscle.rightLeg + 'kg';
 }
 
 function renderChart(history, days) {
