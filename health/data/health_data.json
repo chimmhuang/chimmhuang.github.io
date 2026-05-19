@@ -1,0 +1,146 @@
+{
+  "profile": {
+    "gender": "男",
+    "age": 29,
+    "height": 179,
+    "measurementDate": "2026-05-19"
+  },
+  "score": {
+    "total": 81,
+    "advice": "你的BMI和体脂率均高于正常范围。请减少高油高热量食物摄入，保持定期运动习惯，努力恢复健康身体和好身材。"
+  },
+  "bodyMetrics": {
+    "weight": {
+      "value": 82.9,
+      "unit": "kg",
+      "level": "超重",
+      "range": ["偏瘦", "正常", "超重", "肥胖"]
+    },
+    "bmi": {
+      "value": 25.9,
+      "unit": "",
+      "level": "偏高",
+      "range": ["偏低", "标准", "偏高", "过高"]
+    },
+    "bodyFatRate": {
+      "value": 23.7,
+      "unit": "%",
+      "level": "偏胖",
+      "range": ["偏瘦", "标准", "偏胖", "肥胖"]
+    },
+    "heartRate": {
+      "value": 0,
+      "unit": "次/分",
+      "level": "心率过低",
+      "range": ["心率过低", "正常", "正常", "心率过高"]
+    }
+  },
+  "bodyComposition": {
+    "water": {
+      "value": 46.8,
+      "unit": "kg",
+      "level": "标准",
+      "range": ["不足", "标准", "标准", "优"]
+    },
+    "protein": {
+      "value": 13.0,
+      "unit": "kg",
+      "level": "偏低",
+      "range": ["偏低", "正常", "正常", "偏高"]
+    },
+    "fat": {
+      "value": 19.6,
+      "unit": "kg",
+      "level": "偏胖",
+      "range": ["偏瘦", "标准", "偏胖", "肥胖"]
+    },
+    "bone": {
+      "value": 3.5,
+      "unit": "kg",
+      "level": "正常",
+      "range": ["不足", "正常", "正常", "正常"]
+    },
+    "muscle": {
+      "value": 59.8,
+      "unit": "kg",
+      "level": "偏高",
+      "range": ["偏低", "正常", "正常", "偏高"]
+    },
+    "visceralFat": {
+      "value": 9,
+      "unit": "",
+      "level": "警戒",
+      "range": ["健康", "警戒", "稍多", "危险"]
+    },
+    "basalMetabolism": {
+      "value": 1736.0,
+      "unit": "kcal"
+    }
+  },
+  "assessment": {
+    "bodyShape": "倒三角型",
+    "bodyType": "肥胖",
+    "waistHipRatio": 0.9,
+    "bodyAge": 26,
+    "skeletalMuscleIndex": 8.3,
+    "suggestedCalorieIntake": 2517
+  },
+  "segmentalFat": {
+    "leftArm": 1.3,
+    "rightArm": 1.3,
+    "trunk": 10.1,
+    "leftLeg": 2.9,
+    "rightLeg": 3.0
+  },
+  "segmentalMuscle": {
+    "leftArm": 3.4,
+    "rightArm": 3.2,
+    "trunk": 27.1,
+    "leftLeg": 10.0,
+    "rightLeg": 10.1
+  },
+  "history": [
+    {
+      "date": "2026-05-19",
+      "weight": 82.9,
+      "bodyFatRate": 23.7,
+      "bmi": 25.9
+    },
+    {
+      "date": "2026-05-18",
+      "weight": 83.2,
+      "bodyFatRate": 23.8,
+      "bmi": 26.0
+    },
+    {
+      "date": "2026-05-17",
+      "weight": 83.5,
+      "bodyFatRate": 24.0,
+      "bmi": 26.1
+    },
+    {
+      "date": "2026-05-16",
+      "weight": 83.8,
+      "bodyFatRate": 24.1,
+      "bmi": 26.2
+    },
+    {
+      "date": "2026-05-15",
+      "weight": 84.0,
+      "bodyFatRate": 24.2,
+      "bmi": 26.3
+    },
+    {
+      "date": "2026-05-14",
+      "weight": 84.2,
+      "bodyFatRate": 24.3,
+      "bmi": 26.4
+    },
+    {
+      "date": "2026-05-13",
+      "weight": 84.5,
+      "bodyFatRate": 24.5,
+      "bmi": 26.5
+    }
+  ]
+}
