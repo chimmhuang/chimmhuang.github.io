@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
       renderAssessment(data.assessment);
       renderSegmentalData(data.segmentalFat, data.segmentalMuscle);
       renderChart(data.history, 7);
+      renderCalendar(data.activities);
     })
     .catch(error => {
       console.error('Error loading health data:', error);
@@ -236,4 +237,70 @@ function changeTimeRange(days) {
     .catch(error => {
       console.error('Error loading health data:', error);
     });
+}
+
+function renderCalendar(activities) {
+  const container = document.getElementById('calendar-container');
+  if (!container) return;
+
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const currentMonth = today.getMonth();
+  
+  const firstDay = new Date(currentYear, currentMonth, 1);
+  const lastDay = new Date(currentYear, currentMonth + 1, 0);
+  const daysInMonth = lastDay.getDate();
+  const startDayOfWeek = firstDay.getDay();
+
+  const activityMap = new Map();
+  activities.forEach(activity => {
+    activityMap.set(activity.date, activity);
+  });
+
+  const dayNames = ['日', '一', '二', '三', '四', '五', '六'];
+  
+  let headerHTML = '<div class="calendar-header-row">';
+  dayNames.forEach(name => {
+    headerHTML += `<div class="calendar-day-name">${name}</div>`;
+  });
+  headerHTML += '</div>';
+
+  let calendarHTML = '<div class="calendar-grid">';
+  
+  for (let i = 0; i < startDayOfWeek; i++) {
+    calendarHTML += '<div class="calendar-day other-month"></div>';
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    const activity = activityMap.get(dateStr);
+    const isToday = today.getDate() === day;
+    
+    let className = 'calendar-day';
+    if (isToday) className += ' today';
+    if (activity) className += ` ${activity.category}`;
+
+    let labelHTML = '';
+    let tooltipHTML = '';
+    if (activity) {
+      labelHTML = `<span class="calendar-day-label">${activity.type}</span>`;
+      tooltipHTML = `<div class="calendar-tooltip">${dateStr}: ${activity.type}</div>`;
+    }
+
+    calendarHTML += `
+      <div class="${className}">
+        <span class="calendar-day-number">${day}</span>
+        ${labelHTML}
+        ${tooltipHTML}
+      </div>
+    `;
+  }
+
+  const remainingCells = 42 - (startDayOfWeek + daysInMonth);
+  for (let i = 0; i < remainingCells; i++) {
+    calendarHTML += '<div class="calendar-day other-month"></div>';
+  }
+
+  calendarHTML += '</div>';
+  container.innerHTML = headerHTML + calendarHTML;
 }
