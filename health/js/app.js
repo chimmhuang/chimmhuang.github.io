@@ -1,8 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOMContentLoaded fired');
   const cacheBuster = '?' + Date.now();
   fetch('data/health_data.json' + cacheBuster)
-    .then(response => response.json())
+    .then(response => {
+      console.log('Fetch response:', response);
+      return response.json();
+    })
     .then(data => {
+      console.log('Loaded data:', data);
+      console.log('Activities data:', data.activities);
       renderProfile(data.profile);
       renderScore(data.score);
       renderBodyMetrics(data.bodyMetrics);
@@ -10,7 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
       renderAssessment(data.assessment);
       renderSegmentalData(data.segmentalFat, data.segmentalMuscle);
       renderChart(data.history, 7);
-      renderCalendar(data.activities);
+      if (data.activities) {
+        renderCalendar(data.activities);
+      } else {
+        console.error('No activities data found in JSON');
+      }
     })
     .catch(error => {
       console.error('Error loading health data:', error);
@@ -240,8 +250,19 @@ function changeTimeRange(days) {
 }
 
 function renderCalendar(activities) {
+  console.log('renderCalendar called with activities:', activities);
+  
   const container = document.getElementById('calendar-container');
-  if (!container) return;
+  if (!container) {
+    console.error('calendar-container element not found');
+    return;
+  }
+
+  if (!activities || activities.length === 0) {
+    console.error('No activities data');
+    container.innerHTML = '<p style="text-align: center; color: #999;">暂无运动记录</p>';
+    return;
+  }
 
   const today = new Date();
   const currentYear = today.getFullYear();
@@ -303,4 +324,5 @@ function renderCalendar(activities) {
 
   calendarHTML += '</div>';
   container.innerHTML = headerHTML + calendarHTML;
+  console.log('Calendar rendered successfully');
 }
