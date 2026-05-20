@@ -112,25 +112,6 @@
     }
   ],
   "activities": [
-    {"date": "2026-05-01", "type": "10KM", "category": "exercise"},
-    {"date": "2026-05-02", "type": "KEEP", "category": "exercise"},
-    {"date": "2026-05-03", "type": "乱吃", "category": "warning"},
-    {"date": "2026-05-04", "type": "游泳", "category": "exercise"},
-    {"date": "2026-05-05", "type": "10KM", "category": "exercise"},
-    {"date": "2026-05-06", "type": "KEEP", "category": "exercise"},
-    {"date": "2026-05-07", "type": "乱吃", "category": "warning"},
-    {"date": "2026-05-08", "type": "游泳", "category": "exercise"},
-    {"date": "2026-05-09", "type": "10KM", "category": "exercise"},
-    {"date": "2026-05-10", "type": "KEEP", "category": "exercise"},
-    {"date": "2026-05-11", "type": "乱吃", "category": "warning"},
-    {"date": "2026-05-12", "type": "游泳", "category": "exercise"},
-    {"date": "2026-05-13", "type": "10KM", "category": "exercise"},
-    {"date": "2026-05-14", "type": "KEEP", "category": "exercise"},
-    {"date": "2026-05-15", "type": "乱吃", "category": "warning"},
-    {"date": "2026-05-16", "type": "游泳", "category": "exercise"},
-    {"date": "2026-05-17", "type": "10KM", "category": "exercise"},
-    {"date": "2026-05-18", "type": "KEEP", "category": "exercise"},
-    {"date": "2026-05-19", "type": "6KM", "category": "exercise"},
-    {"date": "2026-05-20", "type": "10KM", "category": "exercise"}
+    {"date": "2026-05-19", "type": "6KM", "category": "exercise"}
   ]
 }

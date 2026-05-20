@@ -1,14 +1,16 @@
+let currentYear, currentMonth;
+let activitiesData = [];
+
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOMContentLoaded fired');
+  const today = new Date();
+  currentYear = today.getFullYear();
+  currentMonth = today.getMonth();
+  
   const cacheBuster = '?' + Date.now();
   fetch('data/health_data.json' + cacheBuster)
-    .then(response => {
-      console.log('Fetch response:', response);
-      return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
-      console.log('Loaded data:', data);
-      console.log('Activities data:', data.activities);
+      activitiesData = data.activities || [];
       renderProfile(data.profile);
       renderScore(data.score);
       renderBodyMetrics(data.bodyMetrics);
@@ -16,15 +18,29 @@ document.addEventListener('DOMContentLoaded', function() {
       renderAssessment(data.assessment);
       renderSegmentalData(data.segmentalFat, data.segmentalMuscle);
       renderChart(data.history, 7);
-      if (data.activities) {
-        renderCalendar(data.activities);
-      } else {
-        console.error('No activities data found in JSON');
-      }
+      renderCalendar(currentYear, currentMonth);
     })
     .catch(error => {
       console.error('Error loading health data:', error);
     });
+  
+  document.getElementById('prev-month').addEventListener('click', function() {
+    currentMonth--;
+    if (currentMonth < 0) {
+      currentMonth = 11;
+      currentYear--;
+    }
+    renderCalendar(currentYear, currentMonth);
+  });
+  
+  document.getElementById('next-month').addEventListener('click', function() {
+    currentMonth++;
+    if (currentMonth > 11) {
+      currentMonth = 0;
+      currentYear++;
+    }
+    renderCalendar(currentYear, currentMonth);
+  });
 });
 
 function renderProfile(profile) {
@@ -249,32 +265,20 @@ function changeTimeRange(days) {
     });
 }
 
-function renderCalendar(activities) {
-  console.log('renderCalendar called with activities:', activities);
-  
+function renderCalendar(year, month) {
   const container = document.getElementById('calendar-container');
-  if (!container) {
-    console.error('calendar-container element not found');
-    return;
-  }
-
-  if (!activities || activities.length === 0) {
-    console.error('No activities data');
-    container.innerHTML = '<p style="text-align: center; color: #999;">暂无运动记录</p>';
-    return;
-  }
+  if (!container) return;
+  
+  document.getElementById('current-month').textContent = `${year}年${month + 1}月`;
 
   const today = new Date();
-  const currentYear = today.getFullYear();
-  const currentMonth = today.getMonth();
-  
-  const firstDay = new Date(currentYear, currentMonth, 1);
-  const lastDay = new Date(currentYear, currentMonth + 1, 0);
+  const firstDay = new Date(year, month, 1);
+  const lastDay = new Date(year, month + 1, 0);
   const daysInMonth = lastDay.getDate();
   const startDayOfWeek = firstDay.getDay();
 
   const activityMap = new Map();
-  activities.forEach(activity => {
+  activitiesData.forEach(activity => {
     activityMap.set(activity.date, activity);
   });
 
@@ -293,9 +297,9 @@ function renderCalendar(activities) {
   }
 
   for (let day = 1; day <= daysInMonth; day++) {
-    const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
     const activity = activityMap.get(dateStr);
-    const isToday = today.getDate() === day;
+    const isToday = today.getFullYear() === year && today.getMonth() === month && today.getDate() === day;
     
     let className = 'calendar-day';
     if (isToday) className += ' today';
@@ -324,5 +328,4 @@ function renderCalendar(activities) {
 
   calendarHTML += '</div>';
   container.innerHTML = headerHTML + calendarHTML;
-  console.log('Calendar rendered successfully');
 }
