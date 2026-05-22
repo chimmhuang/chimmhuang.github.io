@@ -530,7 +530,7 @@ body {
   background: linear-gradient(135deg, #ffebee, #ffcdd2);
 }
 
-.calendar-day.乱吃 {
+.calendar-day.bad_eating {
   background: linear-gradient(135deg, #ffebee, #ffcdd2);
 }
 
@@ -561,7 +561,7 @@ body {
   color: white;
 }
 
-.calendar-day.乱吃 .calendar-day-label {
+.calendar-day.bad_eating .calendar-day-label {
   background: #f44336;
   color: white;
 }
