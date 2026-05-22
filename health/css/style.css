@@ -530,6 +530,10 @@ body {
   background: linear-gradient(135deg, #ffebee, #ffcdd2);
 }
 
+.calendar-day.乱吃 {
+  background: linear-gradient(135deg, #ffebee, #ffcdd2);
+}
+
 .calendar-day.other-month {
   opacity: 0.4;
 }
@@ -553,6 +557,11 @@ body {
 }
 
 .calendar-day.warning .calendar-day-label {
+  background: #f44336;
+  color: white;
+}
+
+.calendar-day.乱吃 .calendar-day-label {
   background: #f44336;
   color: white;
 }
