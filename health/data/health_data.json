@@ -113,6 +113,9 @@
   ],
   "activities": [
     {"date": "2026-05-19", "type": "6KM", "category": "exercise"},
-    {"date": "2026-05-20", "type": "吃大餐", "category": "bad_eating"}
+    {"date": "2026-05-20", "type": "吃大餐", "category": "bad_eating"},
+    {"date": "2026-05-22", "type": "KEEP", "category": "exercise"},
+    {"date": "2026-05-23", "type": "6KM", "category": "exercise"},
+    {"date": "2026-05-24", "type": "乱吃", "category": "bad_eating"}
   ]
 }
