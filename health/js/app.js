@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
       renderBodyComposition(data.bodyComposition);
       renderAssessment(data.assessment);
       renderSegmentalData(data.segmentalFat, data.segmentalMuscle);
-      renderChart(data.history, 7);
       renderCalendar(currentYear, currentMonth);
     })
     .catch(error => {

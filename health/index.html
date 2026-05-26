@@ -159,7 +159,8 @@
       <div class="chart-header">
         <h3>体重与体脂变化趋势</h3>
         <div class="time-range">
-          <button class="range-btn active" data-days="7">近7天</button>
+          <button class="range-btn" data-days="7">近7天</button>
+          <button class="range-btn active" data-days="10">近10天</button>
           <button class="range-btn" data-days="30">近30天</button>
           <button class="range-btn" data-days="90">近90天</button>
         </div>
@@ -287,24 +288,50 @@
       });
     });
     
+    function formatDate(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    }
+    
     function updateChart(days) {
       const cacheBuster = '?' + Date.now();
       fetch('data/health_data.json' + cacheBuster)
         .then(response => response.json())
         .then(data => {
-          let displayData = data.history;
-          if (days < displayData.length) {
-            displayData = displayData.slice(-days);
+          const history = data.history;
+          
+          const today = new Date();
+          const dates = [];
+          const weights = [];
+          const fatRates = [];
+          
+          const historyMap = new Map();
+          history.forEach(item => {
+            historyMap.set(item.date, { weight: item.weight, bodyFatRate: item.bodyFatRate });
+          });
+          
+          for (let i = days - 1; i >= 0; i--) {
+            const date = new Date(today);
+            date.setDate(date.getDate() - i);
+            const dateStr = formatDate(date);
+            dates.push(dateStr.slice(5));
+            
+            const record = historyMap.get(dateStr);
+            if (record) {
+              weights.push((record.weight * 2).toFixed(1));
+              fatRates.push(record.bodyFatRate);
+            } else {
+              weights.push(null);
+              fatRates.push(null);
+            }
           }
           
           const ctx = document.getElementById('trendChart').getContext('2d');
           if (currentChart) {
             currentChart.destroy();
           }
-          
-          const dates = displayData.map(item => item.date.slice(5));
-          const weights = displayData.map(item => (item.weight * 2).toFixed(1));
-          const fatRates = displayData.map(item => item.bodyFatRate);
           
           currentChart = new Chart(ctx, {
             type: 'line',
@@ -318,7 +345,8 @@
                   backgroundColor: 'rgba(102, 126, 234, 0.1)',
                   tension: 0.4,
                   fill: true,
-                  yAxisID: 'y'
+                  yAxisID: 'y',
+                  spanGaps: false
                 },
                 {
                   label: '体脂率 (%)',
@@ -327,7 +355,8 @@
                   backgroundColor: 'rgba(255, 152, 0, 0.1)',
                   tension: 0.4,
                   fill: true,
-                  yAxisID: 'y1'
+                  yAxisID: 'y1',
+                  spanGaps: false
                 }
               ]
             },
@@ -372,6 +401,8 @@
           });
         });
     }
+    
+    updateChart(10);
   </script>
 </body>
 </html>
