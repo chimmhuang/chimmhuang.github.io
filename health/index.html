@@ -297,10 +297,9 @@
     
     function updateChart(days) {
       const cacheBuster = '?' + Date.now();
-      fetch('data/health_data.json' + cacheBuster)
+      fetch('data/history.json' + cacheBuster)
         .then(response => response.json())
-        .then(data => {
-          const history = data.history;
+        .then(history => {
           
           const today = new Date();
           const dates = [];

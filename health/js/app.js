@@ -1,5 +1,6 @@
 let currentYear, currentMonth;
 let activitiesData = [];
+let historyData = [];
 
 document.addEventListener('DOMContentLoaded', function() {
   const today = new Date();
@@ -7,21 +8,24 @@ document.addEventListener('DOMContentLoaded', function() {
   currentMonth = today.getMonth();
   
   const cacheBuster = '?' + Date.now();
-  fetch('data/health_data.json' + cacheBuster)
-    .then(response => response.json())
-    .then(data => {
-      activitiesData = data.activities || [];
-      renderProfile(data.profile);
-      renderScore(data.score);
-      renderBodyMetrics(data.bodyMetrics);
-      renderBodyComposition(data.bodyComposition);
-      renderAssessment(data.assessment);
-      renderSegmentalData(data.segmentalFat, data.segmentalMuscle);
-      renderCalendar(currentYear, currentMonth);
-    })
-    .catch(error => {
-      console.error('Error loading health data:', error);
-    });
+  
+  Promise.all([
+    fetch('data/profile.json' + cacheBuster).then(r => r.json()),
+    fetch('data/history.json' + cacheBuster).then(r => r.json()),
+    fetch('data/activities.json' + cacheBuster).then(r => r.json())
+  ]).then(([profileData, historyArr, activitiesArr]) => {
+    activitiesData = activitiesArr || [];
+    historyData = historyArr || [];
+    renderProfile(profileData.profile);
+    renderScore(profileData.score);
+    renderBodyMetrics(profileData.bodyMetrics);
+    renderBodyComposition(profileData.bodyComposition);
+    renderAssessment(profileData.assessment);
+    renderSegmentalData(profileData.segmentalFat, profileData.segmentalMuscle);
+    renderCalendar(currentYear, currentMonth);
+  }).catch(error => {
+    console.error('Error loading health data:', error);
+  });
   
   document.getElementById('prev-month').addEventListener('click', function() {
     currentMonth--;
@@ -172,96 +176,6 @@ function renderSegmentalData(fat, muscle) {
   document.getElementById('muscle-trunk').textContent = muscle.trunk + 'kg';
   document.getElementById('muscle-left-leg').textContent = muscle.leftLeg + 'kg';
   document.getElementById('muscle-right-leg').textContent = muscle.rightLeg + 'kg';
-}
-
-function renderChart(history, days) {
-  const displayData = history.slice(-days);
-  
-  const ctx = document.getElementById('trendChart').getContext('2d');
-  const dates = displayData.map(item => item.date.slice(5));
-  const weights = displayData.map(item => (item.weight * 2).toFixed(1));
-  const fatRates = displayData.map(item => item.bodyFatRate);
-
-  new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: dates,
-      datasets: [
-        {
-          label: '体重 (斤)',
-          data: weights,
-          borderColor: '#667eea',
-          backgroundColor: 'rgba(102, 126, 234, 0.1)',
-          tension: 0.4,
-          fill: true,
-          yAxisID: 'y'
-        },
-        {
-          label: '体脂率 (%)',
-          data: fatRates,
-          borderColor: '#ff9800',
-          backgroundColor: 'rgba(255, 152, 0, 0.1)',
-          tension: 0.4,
-          fill: true,
-          yAxisID: 'y1'
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      interaction: {
-        mode: 'index',
-        intersect: false
-      },
-      plugins: {
-        legend: {
-          position: 'top'
-        }
-      },
-      scales: {
-        y: {
-          type: 'linear',
-          display: true,
-          position: 'left',
-          title: {
-            display: true,
-            text: '体重 (斤)'
-          }
-        },
-        y1: {
-          type: 'linear',
-          display: true,
-          position: 'right',
-          title: {
-            display: true,
-            text: '体脂率 (%)'
-          },
-          min: 20,
-          max: 28,
-          grid: {
-            drawOnChartArea: false
-          }
-        }
-      }
-    }
-  });
-}
-
-function changeTimeRange(days) {
-  const cacheBuster = '?' + Date.now();
-  fetch('data/health_data.json' + cacheBuster)
-    .then(response => response.json())
-    .then(data => {
-      const ctx = document.getElementById('trendChart').getContext('2d');
-      if (window.chartInstance) {
-        window.chartInstance.destroy();
-      }
-      window.chartInstance = renderChart(data.history, days);
-    })
-    .catch(error => {
-      console.error('Error loading health data:', error);
-    });
 }
 
 function renderCalendar(year, month) {
