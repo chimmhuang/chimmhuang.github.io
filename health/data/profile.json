@@ -3,7 +3,7 @@
     "gender": "男",
     "age": 29,
     "height": 179,
-    "measurementDate": "2026-05-30"
+    "measurementDate": "2026-06-01"
   },
   "score": {
     "total": 81,
@@ -11,7 +11,7 @@
   },
   "bodyMetrics": {
     "weight": {
-      "value": 82.7,
+      "value": 82.8,
       "unit": "kg",
       "level": "超重",
       "range": ["偏瘦", "正常", "超重", "肥胖"]
@@ -23,7 +23,7 @@
       "range": ["偏低", "标准", "偏高", "过高"]
     },
     "bodyFatRate": {
-      "value": 23.5,
+      "value": 23.4,
       "unit": "%",
       "level": "偏胖",
       "range": ["偏瘦", "标准", "偏胖", "肥胖"]
@@ -37,7 +37,7 @@
   },
   "bodyComposition": {
     "water": {
-      "value": 46.8,
+      "value": 46.9,
       "unit": "kg",
       "level": "标准",
       "range": ["不足", "标准", "标准", "优"]
@@ -61,19 +61,19 @@
       "range": ["不足", "正常", "正常", "正常"]
     },
     "muscle": {
-      "value": 59.8,
+      "value": 59.9,
       "unit": "kg",
       "level": "偏高",
       "range": ["偏低", "正常", "正常", "偏高"]
     },
     "visceralFat": {
-      "value": 9,
+      "value": 8,
       "unit": "",
       "level": "警戒",
       "range": ["健康", "警戒", "稍多", "危险"]
     },
     "basalMetabolism": {
-      "value": 1737.0,
+      "value": 1739.0,
       "unit": "kcal"
     }
   },
@@ -83,7 +83,7 @@
     "waistHipRatio": 0.9,
     "bodyAge": 25,
     "skeletalMuscleIndex": 8.4,
-    "suggestedCalorieIntake": 2519
+    "suggestedCalorieIntake": 2522
   },
   "segmentalFat": {
     "leftArm": 1.2,
@@ -93,10 +93,10 @@
     "rightLeg": 2.9
   },
   "segmentalMuscle": {
-    "leftArm": 3.4,
+    "leftArm": 3.3,
     "rightArm": 3.2,
-    "trunk": 27.0,
-    "leftLeg": 10.1,
+    "trunk": 26.9,
+    "leftLeg": 10.2,
     "rightLeg": 10.2
   }
 }

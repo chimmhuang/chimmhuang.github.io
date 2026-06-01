@@ -33,5 +33,10 @@
     "date": "2026-05-29",
     "type": "10KM",
     "category": "exercise"
+  },
+  {
+    "date": "2026-05-30",
+    "type": "羽毛球",
+    "category": "exercise"
   }
 ]
