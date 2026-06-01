@@ -330,6 +330,7 @@
           }
           
           // 生成日期范围并填充数据
+          const validFatRates = [];
           for (let i = days - 1; i >= 0; i--) {
             const date = new Date(today);
             date.setDate(date.getDate() - i);
@@ -343,15 +344,29 @@
               lastFatRate = record.bodyFatRate;
               weights.push((record.weight * 2).toFixed(1));
               fatRates.push(record.bodyFatRate);
+              validFatRates.push(record.bodyFatRate);
             } else if (lastWeight !== null) {
               // 当前日期没有记录，但有之前的记录，向前填充
               weights.push((lastWeight * 2).toFixed(1));
               fatRates.push(lastFatRate);
+              validFatRates.push(lastFatRate);
             } else {
               // 前面也没有任何记录，保持null
               weights.push(null);
               fatRates.push(null);
             }
+          }
+          
+          // 计算体脂率的Y轴范围
+          let fatRateMin = 20;
+          let fatRateMax = 28;
+          if (validFatRates.length > 0) {
+            fatRateMin = Math.min(...validFatRates);
+            fatRateMax = Math.max(...validFatRates);
+            // 添加一些缓冲，让数据不要太贴边
+            const padding = 1;
+            fatRateMin = Math.max(0, fatRateMin - padding);
+            fatRateMax = fatRateMax + padding;
           }
           
           const ctx = document.getElementById('trendChart').getContext('2d');
@@ -416,8 +431,8 @@
                     display: true,
                     text: '体脂率 (%)'
                   },
-                  min: 20,
-                  max: 28,
+                  min: fatRateMin,
+                  max: fatRateMax,
                   grid: {
                     drawOnChartArea: false
                   }
