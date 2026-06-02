@@ -312,24 +312,7 @@
             historyMap.set(item.date, { weight: item.weight, bodyFatRate: item.bodyFatRate });
           });
           
-          // 向前填充：找到范围内每个日期之前最近的有效记录
-          let lastWeight = null;
-          let lastFatRate = null;
-          
-          // 首先，找到范围内开始日期之前最近的记录作为初始值
-          for (let i = days; i <= 365; i++) {
-            const checkDate = new Date(today);
-            checkDate.setDate(checkDate.getDate() - i);
-            const checkDateStr = formatDate(checkDate);
-            const record = historyMap.get(checkDateStr);
-            if (record) {
-              lastWeight = record.weight;
-              lastFatRate = record.bodyFatRate;
-              break;
-            }
-          }
-          
-          // 生成日期范围并填充数据
+          // 生成日期范围，没有数据的日期保持为null
           const validFatRates = [];
           for (let i = days - 1; i >= 0; i--) {
             const date = new Date(today);
@@ -339,19 +322,12 @@
             
             const record = historyMap.get(dateStr);
             if (record) {
-              // 当前日期有记录，使用记录值并更新last值
-              lastWeight = record.weight;
-              lastFatRate = record.bodyFatRate;
+              // 当前日期有记录，使用记录值
               weights.push((record.weight * 2).toFixed(1));
               fatRates.push(record.bodyFatRate);
               validFatRates.push(record.bodyFatRate);
-            } else if (lastWeight !== null) {
-              // 当前日期没有记录，但有之前的记录，向前填充
-              weights.push((lastWeight * 2).toFixed(1));
-              fatRates.push(lastFatRate);
-              validFatRates.push(lastFatRate);
             } else {
-              // 前面也没有任何记录，保持null
+              // 当前日期没有记录，保持null（折线会通过spanGaps连接前后数据点）
               weights.push(null);
               fatRates.push(null);
             }
