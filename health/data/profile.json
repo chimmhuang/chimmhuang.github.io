@@ -3,7 +3,7 @@
     "gender": "男",
     "age": 29,
     "height": 179,
-    "measurementDate": "2026-06-04"
+    "measurementDate": "2026-06-05"
   },
   "score": {
     "total": 82,
@@ -11,19 +11,19 @@
   },
   "bodyMetrics": {
     "weight": {
-      "value": 83.1,
+      "value": 82.8,
       "unit": "kg",
       "level": "超重",
       "range": ["偏瘦", "正常", "超重", "肥胖"]
     },
     "bmi": {
-      "value": 25.9,
+      "value": 25.8,
       "unit": "",
       "level": "偏高",
       "range": ["偏低", "标准", "偏高", "过高"]
     },
     "bodyFatRate": {
-      "value": 22.9,
+      "value": 23.0,
       "unit": "%",
       "level": "偏胖",
       "range": ["偏瘦", "标准", "偏胖", "肥胖"]
@@ -37,19 +37,19 @@
   },
   "bodyComposition": {
     "water": {
-      "value": 47.4,
+      "value": 47.1,
       "unit": "kg",
       "level": "标准",
       "range": ["不足", "标准", "标准", "优"]
     },
     "protein": {
-      "value": 13.2,
+      "value": 13.1,
       "unit": "kg",
       "level": "偏低",
       "range": ["偏低", "正常", "正常", "偏高"]
     },
     "fat": {
-      "value": 19.0,
+      "value": 19.1,
       "unit": "kg",
       "level": "偏胖",
       "range": ["偏瘦", "标准", "偏胖", "肥胖"]
@@ -61,7 +61,7 @@
       "range": ["不足", "正常", "正常", "正常"]
     },
     "muscle": {
-      "value": 60.6,
+      "value": 60.2,
       "unit": "kg",
       "level": "偏高",
       "range": ["偏低", "正常", "正常", "偏高"]
@@ -73,7 +73,7 @@
       "range": ["健康", "警戒", "稍多", "危险"]
     },
     "basalMetabolism": {
-      "value": 1754.0,
+      "value": 1746.0,
       "unit": "kcal"
     }
   },
@@ -83,20 +83,20 @@
     "waistHipRatio": 0.9,
     "bodyAge": 25,
     "skeletalMuscleIndex": 8.5,
-    "suggestedCalorieIntake": 2543
+    "suggestedCalorieIntake": 2532
   },
   "segmentalFat": {
     "leftArm": 1.2,
     "rightArm": 1.3,
     "trunk": 9.7,
-    "leftLeg": 2.8,
+    "leftLeg": 2.9,
     "rightLeg": 2.9
   },
   "segmentalMuscle": {
     "leftArm": 3.4,
     "rightArm": 3.2,
-    "trunk": 27.2,
+    "trunk": 27.0,
     "leftLeg": 10.2,
-    "rightLeg": 10.4
+    "rightLeg": 10.3
   }
 }
