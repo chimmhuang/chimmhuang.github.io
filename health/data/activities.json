@@ -58,5 +58,10 @@
     "date": "2026-06-07",
     "type": "KEEP",
     "category": "exercise"
+  },
+  {
+    "date": "2026-06-08",
+    "type": "10KM",
+    "category": "exercise"
   }
 ]
