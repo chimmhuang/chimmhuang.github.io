@@ -48,5 +48,20 @@
     "date": "2026-06-04",
     "type": "10KM",
     "category": "exercise"
+  },
+  {
+    "date": "2026-06-05",
+    "type": "乱吃",
+    "category": "bad_eating"
+  },
+  {
+    "date": "2026-06-07",
+    "type": "KEEP",
+    "category": "exercise"
+  },
+  {
+    "date": "2026-06-08",
+    "type": "10KM",
+    "category": "exercise"
   }
 ]
