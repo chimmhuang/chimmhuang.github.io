@@ -63,5 +63,15 @@
     "date": "2026-06-08",
     "type": "10KM",
     "category": "exercise"
+  },
+  {
+    "date": "2026-06-13",
+    "type": "空腹10KM",
+    "category": "exercise"
+  },
+  {
+    "date": "2026-06-14",
+    "type": "空腹10KM",
+    "category": "exercise"
   }
 ]
