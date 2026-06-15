@@ -3,27 +3,27 @@
     "gender": "男",
     "age": 29,
     "height": 179,
-    "measurementDate": "2026-06-11"
+    "measurementDate": "2026-06-12"
   },
   "score": {
-    "total": 81,
+    "total": 82,
     "advice": "你的BMI和体脂率均高于正常范围。请减少高油高热量食物摄入，保持定期运动习惯，努力恢复健康身体和好身材。"
   },
   "bodyMetrics": {
     "weight": {
-      "value": 82.8,
+      "value": 83.1,
       "unit": "kg",
       "level": "超重",
       "range": ["偏瘦", "正常", "超重", "肥胖"]
     },
     "bmi": {
-      "value": 25.8,
+      "value": 25.9,
       "unit": "",
       "level": "偏高",
       "range": ["偏低", "标准", "偏高", "过高"]
     },
     "bodyFatRate": {
-      "value": 23.4,
+      "value": 23.2,
       "unit": "%",
       "level": "偏胖",
       "range": ["偏瘦", "标准", "偏胖", "肥胖"]
@@ -37,7 +37,7 @@
   },
   "bodyComposition": {
     "water": {
-      "value": 46.9,
+      "value": 47.2,
       "unit": "kg",
       "level": "标准",
       "range": ["不足", "标准", "标准", "优"]
@@ -61,7 +61,7 @@
       "range": ["不足", "正常", "正常", "正常"]
     },
     "muscle": {
-      "value": 60.0,
+      "value": 60.3,
       "unit": "kg",
       "level": "偏高",
       "range": ["偏低", "正常", "正常", "偏高"]
@@ -73,7 +73,7 @@
       "range": ["健康", "警戒", "稍多", "危险"]
     },
     "basalMetabolism": {
-      "value": 1741.0,
+      "value": 1749.0,
       "unit": "kcal"
     }
   },
@@ -83,20 +83,20 @@
     "waistHipRatio": 0.9,
     "bodyAge": 25,
     "skeletalMuscleIndex": 8.4,
-    "suggestedCalorieIntake": 2524
+    "suggestedCalorieIntake": 2536
   },
   "segmentalFat": {
-    "leftArm": 1.2,
+    "leftArm": 1.3,
     "rightArm": 1.3,
     "trunk": 9.9,
     "leftLeg": 2.9,
-    "rightLeg": 2.9
+    "rightLeg": 3.0
   },
   "segmentalMuscle": {
-    "leftArm": 3.3,
+    "leftArm": 3.4,
     "rightArm": 3.2,
-    "trunk": 27.0,
-    "leftLeg": 10.2,
+    "trunk": 27.2,
+    "leftLeg": 10.1,
     "rightLeg": 10.3
   }
 }
