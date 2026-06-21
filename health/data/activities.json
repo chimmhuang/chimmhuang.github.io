@@ -73,5 +73,15 @@
     "date": "2026-06-14",
     "type": "空腹10KM",
     "category": "exercise"
+  },
+  {
+    "date": "2026-06-18",
+    "type": "HIIT",
+    "category": "exercise"
+  },
+  {
+    "date": "2026-06-19",
+    "type": "空腹10KM",
+    "category": "exercise"
   }
 ]
