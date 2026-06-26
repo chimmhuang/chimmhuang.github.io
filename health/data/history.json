@@ -83,5 +83,15 @@
     "date": "2026-06-24",
     "weight": 81.4,
     "bodyFatRate": 23.0
+  },
+  {
+    "date": "2026-06-25",
+    "weight": 81.8,
+    "bodyFatRate": 22.1
+  },
+  {
+    "date": "2026-06-26",
+    "weight": 81.7,
+    "bodyFatRate": 23.4
   }
 ]
