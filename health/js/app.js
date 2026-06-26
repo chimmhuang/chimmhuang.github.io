@@ -178,6 +178,15 @@ function renderSegmentalData(fat, muscle) {
   document.getElementById('muscle-right-leg').textContent = muscle.rightLeg + 'kg';
 }
 
+function getCategoryLabel(category) {
+  const labels = {
+    'exercise': '运动',
+    'bad_eating': '乱吃',
+    'warning': '警告'
+  };
+  return labels[category] || category;
+}
+
 function renderCalendar(year, month) {
   const container = document.getElementById('calendar-container');
   if (!container) return;
@@ -192,8 +201,13 @@ function renderCalendar(year, month) {
 
   const activityMap = new Map();
   activitiesData.forEach(activity => {
-    activityMap.set(activity.date, activity);
+    if (!activityMap.has(activity.date)) {
+      activityMap.set(activity.date, []);
+    }
+    activityMap.get(activity.date).push(activity);
   });
+
+  const categoryPriority = { 'bad_eating': 3, 'warning': 2, 'exercise': 1 };
 
   const dayNames = ['日', '一', '二', '三', '四', '五', '六'];
   
@@ -211,24 +225,35 @@ function renderCalendar(year, month) {
 
   for (let day = 1; day <= daysInMonth; day++) {
     const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-    const activity = activityMap.get(dateStr);
+    const dayActivities = activityMap.get(dateStr) || [];
     const isToday = today.getFullYear() === year && today.getMonth() === month && today.getDate() === day;
     
     let className = 'calendar-day';
     if (isToday) className += ' today';
-    if (activity) className += ` ${activity.category}`;
+    
+    if (dayActivities.length > 0) {
+      const dominant = dayActivities.reduce((max, act) => 
+        (categoryPriority[act.category] || 0) > (categoryPriority[max.category] || 0) ? act : max
+      );
+      className += ` ${dominant.category}`;
+    }
 
-    let labelHTML = '';
+    let labelsHTML = '';
     let tooltipHTML = '';
-    if (activity) {
-      labelHTML = `<span class="calendar-day-label">${activity.type}</span>`;
-      tooltipHTML = `<div class="calendar-tooltip">${dateStr}: ${activity.type}</div>`;
+    if (dayActivities.length > 0) {
+      labelsHTML = '<div class="calendar-day-labels">';
+      dayActivities.forEach(act => {
+        labelsHTML += `<span class="calendar-day-label ${act.category}">${act.type}</span>`;
+      });
+      labelsHTML += '</div>';
+      const tooltipText = dayActivities.map(act => `${act.type} (${getCategoryLabel(act.category)})`).join('，');
+      tooltipHTML = `<div class="calendar-tooltip">${dateStr}: ${tooltipText}</div>`;
     }
 
     calendarHTML += `
       <div class="${className}">
         <span class="calendar-day-number">${day}</span>
-        ${labelHTML}
+        ${labelsHTML}
         ${tooltipHTML}
       </div>
     `;

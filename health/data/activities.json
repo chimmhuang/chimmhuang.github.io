@@ -98,5 +98,10 @@
     "date": "2026-06-25",
     "type": "HIIT",
     "category": "exercise"
+  },
+  {
+    "date": "2026-06-25",
+    "type": "奶茶",
+    "category": "warning"
   }
 ]

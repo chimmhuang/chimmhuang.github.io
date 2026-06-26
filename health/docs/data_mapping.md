@@ -190,12 +190,13 @@ health/
 | `type` | String | 活动类型描述 |
 | `category` | String | 活动类别（用于样式区分） |
 
-##### category 类别说明
+######### category 类别说明
 
 | 类别值 | 说明 | 样式类 |
 | :--- | :--- | :--- |
 | `exercise` | 运动（如跑步、健身） | `.exercise`（绿色背景） |
-| `bad_eating` | 不良饮食 | `.bad_eating`（警告背景） |
+| `bad_eating` | 不良饮食（如吃大餐、乱吃） | `.bad_eating`（红色背景） |
+| `warning` | 警告（如奶茶、饮料等高糖饮品） | `.warning`（黄色背景） |
 
 **用途**：用于日历展示，标记每日活动状态
 

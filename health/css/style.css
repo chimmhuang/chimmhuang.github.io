@@ -470,8 +470,12 @@ body {
   background: linear-gradient(135deg, #4caf50, #81c784);
 }
 
-.legend-warning {
+.legend-bad-eating {
   background: linear-gradient(135deg, #f44336, #ef5350);
+}
+
+.legend-warning {
+  background: linear-gradient(135deg, #ffc107, #ffd54f);
 }
 
 .calendar-container {
@@ -527,7 +531,7 @@ body {
 }
 
 .calendar-day.warning {
-  background: linear-gradient(135deg, #ffebee, #ffcdd2);
+  background: linear-gradient(135deg, #fff8e1, #ffecb3);
 }
 
 .calendar-day.bad_eating {
@@ -551,17 +555,38 @@ body {
   border-radius: 10px;
 }
 
-.calendar-day.exercise .calendar-day-label {
+.calendar-day-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  margin-top: 4px;
+  width: 100%;
+  padding: 0 2px;
+}
+
+.calendar-day-label {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calendar-day-label.exercise {
   background: #4caf50;
   color: white;
 }
 
-.calendar-day.warning .calendar-day-label {
-  background: #f44336;
-  color: white;
+.calendar-day-label.warning {
+  background: #ffc107;
+  color: #333;
 }
 
-.calendar-day.bad_eating .calendar-day-label {
+.calendar-day-label.bad_eating {
   background: #f44336;
   color: white;
 }
