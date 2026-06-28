@@ -103,5 +103,25 @@
     "date": "2026-06-25",
     "type": "奶茶",
     "category": "warning"
+  },
+  {
+    "date": "2026-06-26",
+    "type": "游泳",
+    "category": "exercise"
+  },
+  {
+    "date": "2026-06-27",
+    "type": "龙虾",
+    "category": "bad_eating"
+  },
+  {
+    "date": "2026-06-27",
+    "type": "奶茶",
+    "category": "bad_eating"
+  },
+  {
+    "date": "2026-06-28",
+    "type": "空腹10KM",
+    "category": "exercise"
   }
 ]
