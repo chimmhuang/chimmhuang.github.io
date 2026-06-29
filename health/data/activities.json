@@ -123,5 +123,10 @@
     "date": "2026-06-28",
     "type": "空腹10KM",
     "category": "exercise"
+  },
+  {
+    "date": "2026-06-28",
+    "type": "奶茶",
+    "category": "bad_eating"
   }
 ]
