@@ -128,5 +128,10 @@
     "date": "2026-06-28",
     "type": "奶茶",
     "category": "warning"
+  },
+  {
+    "date": "2026-06-29",
+    "type": "奶茶",
+    "category": "bad_eating"
   }
 ]
