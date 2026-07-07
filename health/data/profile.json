@@ -3,53 +3,53 @@
     "gender": "男",
     "age": 29,
     "height": 179,
-    "measurementDate": "2026-06-30"
+    "measurementDate": "2026-07-07"
   },
   "score": {
-    "total": 83,
+    "total": 81,
     "advice": "你的BMI和体脂率均高于正常范围。请减少高油高热量食物摄入，保持定期运动习惯，努力恢复健康身体和好身材。"
   },
   "bodyMetrics": {
     "weight": {
-      "value": 82.2,
+      "value": 81.9,
       "unit": "kg",
       "level": "超重",
       "range": ["偏瘦", "正常", "超重", "肥胖"]
     },
     "bmi": {
-      "value": 25.7,
+      "value": 25.6,
       "unit": "",
       "level": "偏高",
       "range": ["偏低", "标准", "偏高", "过高"]
     },
     "bodyFatRate": {
-      "value": 22.3,
+      "value": 23.0,
       "unit": "%",
       "level": "偏胖",
       "range": ["偏瘦", "标准", "偏胖", "肥胖"]
     },
     "heartRate": {
-      "value": 0,
+      "value": 90,
       "unit": "次/分",
-      "level": "心率过低",
+      "level": "正常",
       "range": ["心率过低", "正常", "正常", "心率过高"]
     }
   },
   "bodyComposition": {
     "water": {
-      "value": 47.3,
+      "value": 46.6,
       "unit": "kg",
       "level": "标准",
       "range": ["不足", "标准", "标准", "优"]
     },
     "protein": {
-      "value": 13.1,
+      "value": 13.0,
       "unit": "kg",
       "level": "偏低",
       "range": ["偏低", "正常", "正常", "偏高"]
     },
     "fat": {
-      "value": 18.3,
+      "value": 18.8,
       "unit": "kg",
       "level": "偏胖",
       "range": ["偏瘦", "标准", "偏胖", "肥胖"]
@@ -61,7 +61,7 @@
       "range": ["不足", "正常", "正常", "正常"]
     },
     "muscle": {
-      "value": 60.4,
+      "value": 59.6,
       "unit": "kg",
       "level": "偏高",
       "range": ["偏低", "正常", "正常", "偏高"]
@@ -73,7 +73,7 @@
       "range": ["健康", "警戒", "稍多", "危险"]
     },
     "basalMetabolism": {
-      "value": 1750.0,
+      "value": 1732.0,
       "unit": "kcal"
     }
   },
@@ -82,21 +82,21 @@
     "bodyType": "肥胖",
     "waistHipRatio": 0.9,
     "bodyAge": 25,
-    "skeletalMuscleIndex": 8.5,
-    "suggestedCalorieIntake": 2538
+    "skeletalMuscleIndex": 8.4,
+    "suggestedCalorieIntake": 2511
   },
   "segmentalFat": {
     "leftArm": 1.2,
-    "rightArm": 1.2,
-    "trunk": 9.3,
+    "rightArm": 1.3,
+    "trunk": 9.5,
     "leftLeg": 2.8,
     "rightLeg": 2.9
   },
   "segmentalMuscle": {
-    "leftArm": 3.4,
+    "leftArm": 3.3,
     "rightArm": 3.2,
-    "trunk": 27.1,
-    "leftLeg": 10.3,
-    "rightLeg": 10.3
+    "trunk": 26.7,
+    "leftLeg": 10.2,
+    "rightLeg": 10.2
   }
 }
