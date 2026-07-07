@@ -133,5 +133,15 @@
     "date": "2026-06-29",
     "type": "奶茶",
     "category": "bad_eating"
+  },
+  {
+    "date": "2026-06-30",
+    "type": "HIIT",
+    "category": "exercise"
+  },
+  {
+    "date": "2026-07-01",
+    "type": "零食过量",
+    "category": "bad_eating"
   }
 ]
